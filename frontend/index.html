@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan-Pup Music Downloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="pup-icon">🐕</div>
+            <h1 class="title">Pan-Pup Music Downloader</h1>
+            <p class="subtitle">Your Personal YouTube Music Library</p>
+        </header>
+        <main class="main-content">
+            <section class="youtube-section">
+                <div class="url-section">
+                    <input type="url" 
+                           class="url-input" 
+                           placeholder="Paste YouTube URL here (auto-detects from clipboard)" 
+                           id="urlInput">
+                    <button class="parse-btn" onclick="parsePlaylist()" id="parseBtn">
+                        Parse
+                    </button>
+                </div>
+                
+                <div class="youtube-container">
+                    <div class="youtube-placeholder">
+                        <div class="placeholder-content">
+                            <h3>🎵 How to use Pan-Pup:</h3>
+                            <ol>
+                                <li>Open <a href="https://youtube.com" target="_blank">YouTube</a> in a new tab</li>
+                                <li>Find a song, album, or playlist</li>
+                                <li>Copy the URL</li>
+                                <li>Come back here - it auto-pastes!</li>
+                                <li>Click Parse to see tracks</li>
+                            </ol>
+                            <p><strong>Pro tip:</strong> Works with single songs, albums, and playlists!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="sidebar">
+                <h3 class="sidebar-title">🎵 Track Selection</h3>
+                
+                <div class="controls">
+                    <button class="control-btn" onclick="selectAll()">Select All</button>
+                    <button class="control-btn" onclick="selectNone()">None</button>
+                </div>
+                <div class="track-list" id="trackList">
+                    <div class="empty-state">
+                        <div class="empty-icon">🎵</div>
+                        <p>Paste a YouTube URL and click Parse to see tracks</p>
+                    </div>
+                </div>
+                <button class="download-btn" 
+                        onclick="downloadSelected()" 
+                        id="downloadBtn" 
+                        disabled>
+                    🎵 Download Selected
+                </button>
+                <div class="status" id="status"></div>
+                <div class="instructions">
+                    <h4>📖 How to use:</h4>
+                    <ol>
+                        <li>Search/browse YouTube below</li>
+                        <li>Copy any video/playlist URL</li>
+                        <li>It auto-pastes above</li>
+                        <li>Click Parse to see tracks</li>
+                        <li>Select & download!</li>
+                    </ol>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
